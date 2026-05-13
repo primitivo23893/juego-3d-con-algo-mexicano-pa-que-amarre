@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://bhdo1iuslhblg"]
+
+[ext_resource type="PackedScene" uid="uid://dbkyyo1ht5ruy" path="res://esenas/cubo/cubo.tscn" id="1_2ss74"]
+[ext_resource type="Script" uid="uid://bosrb5tt47hx1" path="res://esenas/principal/principal.gd" id="1_10c38"]
+[ext_resource type="PackedScene" uid="uid://bkh0lrow7sgvc" path="res://esenas/personaje/character_body_3d.tscn" id="2_hmm78"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hmm78"]
+sky_top_color = Color(0, 1, 0, 1)
+sky_horizon_color = Color(0.96862745, 1, 0, 1)
+ground_bottom_color = Color(0.31889, 1.2646355e-05, 0.25342113, 1)
+ground_horizon_color = Color(0.09724354, 0.7268675, 0.8658823, 1)
+
+[sub_resource type="Sky" id="Sky_10c38"]
+sky_material = SubResource("ProceduralSkyMaterial_hmm78")
+
+[sub_resource type="Environment" id="Environment_hmm78"]
+background_mode = 2
+sky = SubResource("Sky_10c38")
+ambient_light_source = 3
+reflected_light_source = 2
+
+[node name="Principal" type="Node3D" unique_id=2119835509]
+script = ExtResource("1_10c38")
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1713659573]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4667354, 2.9749753, 4.8692136)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2090765468]
+environment = SubResource("Environment_hmm78")
+
+[node name="CharacterBody3D" parent="." unique_id=459927726 instance=ExtResource("2_hmm78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7780085, 1.046844, 4.8692136)
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1309599247]
+
+[node name="Cubo" parent="Node3D" unique_id=1457076614 instance=ExtResource("1_2ss74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6156616, 0, -0.17553711)
+
+[node name="Cubo2" parent="Node3D" unique_id=465087955 instance=ExtResource("1_2ss74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6073608, 0, -0.17053223)
+
+[node name="Cubo3" parent="Node3D" unique_id=1553724712 instance=ExtResource("1_2ss74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60839844, 0, -0.16040039)
+
+[node name="Cubo4" parent="Node3D" unique_id=1946083434 instance=ExtResource("1_2ss74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3998413, 0, -0.15527344)
+
+[node name="Cubo5" parent="Node3D" unique_id=480882859 instance=ExtResource("1_2ss74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3988037, 0, -0.14501953)
+
+[node name="Cubo6" parent="Node3D" unique_id=1692813404 instance=ExtResource("1_2ss74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.397766, 0, -0.13476563)
+
+[node name="Cubo7" parent="Node3D" unique_id=592716084 instance=ExtResource("1_2ss74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4102783, 0.008544922, 0.8652344)
+
+[node name="Cubo8" parent="Node3D" unique_id=72150545 instance=ExtResource("1_2ss74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.418335, 0.009460449, 1.8652344)
+
+[node name="Cubo9" parent="Node3D" unique_id=532911302 instance=ExtResource("1_2ss74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4263306, 0.010375977, 2.8652344)
+
+[node name="Cubo10" parent="Node3D" unique_id=74745226 instance=ExtResource("1_2ss74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4152222, 0.0063476563, 3.8652344)
+
+[node name="Cubo11" parent="Node3D" unique_id=1821713713 instance=ExtResource("1_2ss74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4231567, 0.0072631836, 4.8652344)
+
+[node name="Cubo12" parent="Node3D" unique_id=1172161957 instance=ExtResource("1_2ss74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4524536, 0, 4.840332)
+
+[node name="Cubo13" parent="Node3D" unique_id=1795189865 instance=ExtResource("1_2ss74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53930664, 0, 4.858032)
+
+[node name="Cubo14" parent="Node3D" unique_id=496508460 instance=ExtResource("1_2ss74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5042038, -0.09321594, 4.7872314)
+
+[node name="Cubo15" parent="Node3D" unique_id=1173737392 instance=ExtResource("1_2ss74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6101074, 0.00061035156, 0.8244629)
+
+[node name="Cubo16" parent="Node3D" unique_id=467430635 instance=ExtResource("1_2ss74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.621338, 0.015686035, 1.8244629)
+
+[node name="Cubo17" parent="Node3D" unique_id=1178191397 instance=ExtResource("1_2ss74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6325684, 0.030822754, 2.824463)
+
+[node name="Cubo18" parent="Node3D" unique_id=1174200836 instance=ExtResource("1_2ss74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6437378, 0.026672363, 3.824463)
+
+[node name="Cubo19" parent="Node3D" unique_id=850988910 instance=ExtResource("1_2ss74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.616516, 0.051879883, 4.824463)
+
+[node name="Cubo20" parent="Node3D" unique_id=1670440996 instance=ExtResource("1_2ss74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6256256, -0.0025024414, 4.7911377)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1904789641]
+transform = Transform3D(0.6862374, -0.3535609, 0.6356673, 0, 0.8739165, 0.48607612, -0.72737765, -0.3335636, 0.59971416, 6.472006, 5.319772, 8.616111)
+projection = 1
+size = 5.5123496

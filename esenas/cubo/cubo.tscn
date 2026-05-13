@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dbkyyo1ht5ruy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pyg48"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_b0g00"]
+
+[node name="Cubo" type="StaticBody3D" unique_id=1457076614]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1512200565]
+shape = SubResource("BoxShape3D_pyg48")
+debug_color = Color(0, 0.6, 1, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1427551291]
+mesh = SubResource("BoxMesh_b0g00")
