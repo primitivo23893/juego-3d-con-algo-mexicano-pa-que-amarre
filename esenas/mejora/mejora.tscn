@@ -20,7 +20,7 @@ mesh = SubResource("TorusMesh_v01ny")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2130234467]
 shape = SubResource("BoxShape3D_poh51")
 
-[node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=320649316]
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=1095580538]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6679061, 0)
 emitting = false
 lifetime = 2.97
