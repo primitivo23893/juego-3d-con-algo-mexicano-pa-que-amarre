@@ -15,7 +15,5 @@ mesh = SubResource("CapsuleMesh_nsl7w")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=245094475]
 shape = SubResource("CapsuleShape3D_arjcg")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=583946545]
-transform = Transform3D(0.78463566, -0.30134636, 0.5417908, 0, 0.8739165, 0.48607615, -0.61995715, -0.38139266, 0.6857061, 6.472006, 6.237889, 8.616111)
-projection = 1
-size = 5.5123496
+[node name="RayCastFloor" type="RayCast3D" parent="." unique_id=931113085]
+target_position = Vector3(0, -4, 0)
