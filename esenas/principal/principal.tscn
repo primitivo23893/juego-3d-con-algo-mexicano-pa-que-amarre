@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bosrb5tt47hx1" path="res://esenas/principal/principal.gd" id="1_10c38"]
 [ext_resource type="PackedScene" uid="uid://bkh0lrow7sgvc" path="res://esenas/personaje/character_body_3d.tscn" id="2_hmm78"]
-[ext_resource type="PackedScene" uid="uid://dphbw0cb63wj" path="res://esenas/mejora/mejora.tscn" id="3_10c38"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hmm78"]
 sky_top_color = Color(0.9224348, 0.9267584, 0.9234689, 1)
@@ -42,5 +41,4 @@ transform = Transform3D(0.6862374, -0.3535609, 0.6356673, 0, 0.8739165, 0.486076
 projection = 1
 size = 5.5123496
 
-[node name="Node3D2" parent="." unique_id=1871726348 instance=ExtResource("3_10c38")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, -4)
+[node name="Timer" type="Timer" parent="." unique_id=900018383]
