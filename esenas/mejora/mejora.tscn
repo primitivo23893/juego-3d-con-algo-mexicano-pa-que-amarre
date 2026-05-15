@@ -2,15 +2,23 @@
 
 [ext_resource type="Script" uid="uid://dc7aup8yj0qop" path="res://esenas/mejora/mejora.gd" id="1_poh51"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_poh51"]
+albedo_color = Color(1, 1, 0, 1)
+
 [sub_resource type="TorusMesh" id="TorusMesh_v01ny"]
+material = SubResource("StandardMaterial3D_poh51")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_poh51"]
 size = Vector3(1, 2.363556, 1.0219727)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x1ey3"]
+albedo_color = Color(1, 1, 0, 1)
+
 [sub_resource type="TorusMesh" id="TorusMesh_poh51"]
+material = SubResource("StandardMaterial3D_x1ey3")
 
 [node name="Node3D" type="Area3D" unique_id=1402238466]
-collision_layer = 3
+collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_poh51")
 

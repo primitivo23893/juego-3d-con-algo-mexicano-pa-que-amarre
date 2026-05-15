@@ -4,12 +4,15 @@ const GRID_SIZE = 1.0
 var is_moving = false
 
 @onready var ray_floor = $RayCastFloor
+@onready var mesh = $MeshInstance3D
 
 @export var player_id : int = 1 
+@export var color_player : StandardMaterial3D 
 
 var direccion_actual := Vector2.ZERO
 func _ready() -> void:
 	add_to_group("jugadores")
+	mesh.material_override = color_player
 	
 	
 func _physics_process(_delta: float) -> void:

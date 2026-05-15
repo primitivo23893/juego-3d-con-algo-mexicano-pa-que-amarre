@@ -16,6 +16,12 @@ sky = SubResource("Sky_10c38")
 ambient_light_source = 3
 reflected_light_source = 2
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hmm78"]
+albedo_color = Color(0, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10c38"]
+albedo_color = Color(0, 0, 1, 1)
+
 [node name="Principal" type="Node3D" unique_id=2119835509]
 script = ExtResource("1_10c38")
 
@@ -28,13 +34,15 @@ environment = SubResource("Environment_hmm78")
 [node name="CharacterBody3D" parent="." unique_id=459927726 instance=ExtResource("2_hmm78")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 collision_layer = 2
+color_player = SubResource("StandardMaterial3D_hmm78")
 
 [node name="CharacterBody3D2" parent="." unique_id=1662641891 instance=ExtResource("2_hmm78")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, 0)
 collision_layer = 2
 player_id = 2
+color_player = SubResource("StandardMaterial3D_10c38")
 
-[node name="Node3D" type="Node3D" parent="." unique_id=1309599247]
+[node name="Mapa" type="Node3D" parent="." unique_id=1309599247]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1904789641]
 transform = Transform3D(0.6862374, -0.3535609, 0.6356673, 0, 0.8739165, 0.48607612, -0.72737765, -0.3335636, 0.59971416, 6.472006, 5.319772, 8.616111)
@@ -42,3 +50,5 @@ projection = 1
 size = 5.5123496
 
 [node name="Timer" type="Timer" parent="." unique_id=900018383]
+
+[node name="Enemigos" type="Node3D" parent="." unique_id=1973403736]

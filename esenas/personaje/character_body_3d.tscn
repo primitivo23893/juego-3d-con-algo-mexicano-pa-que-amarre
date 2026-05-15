@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dlo3cvr4mkxas" path="res://esenas/personaje/character_body_3d.gd" id="1_5vruu"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5vruu"]
+albedo_color = Color(1, 1, 0, 1)
+metallic = 0.6
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_nsl7w"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_arjcg"]
@@ -10,6 +14,7 @@
 script = ExtResource("1_5vruu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=26167033]
+material_override = SubResource("StandardMaterial3D_5vruu")
 mesh = SubResource("CapsuleMesh_nsl7w")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=245094475]

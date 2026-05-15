@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bqhiqsqym6f0l"]
+
+[ext_resource type="Script" uid="uid://dyfjiirk1qooy" path="res://esenas/enemigo/enemigo.gd" id="1_r3cva"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_em0b1"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_r3cva"]
+material = SubResource("StandardMaterial3D_em0b1")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fe3ws"]
+
+[node name="Enemigo" type="CharacterBody3D" unique_id=1368458681]
+collision_layer = 8
+script = ExtResource("1_r3cva")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=529856596]
+mesh = SubResource("CapsuleMesh_r3cva")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=333346116]
+shape = SubResource("CapsuleShape3D_fe3ws")
+
+[node name="RayCastFloor" type="RayCast3D" parent="." unique_id=690558816]
+
+[node name="RayCastFloorArriba" type="RayCast3D" parent="." unique_id=1797545569]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+target_position = Vector3(0, -3, 0)
+
+[node name="RayCastFloorAbajo" type="RayCast3D" parent="." unique_id=1804460639]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+target_position = Vector3(0, -4, 0)
+
+[node name="RayCastFloorDerecha" type="RayCast3D" parent="." unique_id=1255100290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+target_position = Vector3(0, -4, 0)
+
+[node name="RayCastFloorIzquierda" type="RayCast3D" parent="." unique_id=1460332767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+target_position = Vector3(0, -4, 0)

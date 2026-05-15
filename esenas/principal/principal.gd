@@ -2,10 +2,12 @@ extends Node3D
 
 var cubo_scene = preload("res://esenas/cubo/cubo.tscn")
 var mejora_scene = preload("res://esenas/mejora/mejora.tscn")
+var enemigo = preload("res://esenas/enemigo/enemigo.tscn")
 
-@onready var contenedor_cubos = $Node3D
+@onready var contenedor_cubos = $Mapa
 @onready var marker_reinicio = $Marker3D
 @onready var camara = $Camera3D
+@onready var contenedor_enemigos = $Enemigos
 
 @export var suavizado : float = 0.1 
 @export var margen_zoom : float = 2.0
@@ -143,7 +145,7 @@ func generar_seccion(indice: int) -> void:
 					mapa[x][z] = true
 
 # --- CONSTRUCCIÓN FÍSICA Y MEJORAS GARANTIZADAS ---
-	var offset_x = 10 
+	var offset_x = 10  
 	var altura = -1.0 
 	
 	# 1. Creamos una lista vacía para guardar dónde hay suelo válido
@@ -171,7 +173,7 @@ func generar_seccion(indice: int) -> void:
 	
 	# Decidimos cuántas mejoras queremos POR SECCIÓN (Ejemplo: 3)
 	var cantidad_mejoras_por_seccion = 3
-	
+	var cantidad_de_enemigos_por_seccion = 15
 	for i in range(cantidad_mejoras_por_seccion):
 		# Nos aseguramos de que haya suficientes pisos en la lista
 		if i < posiciones_de_suelo.size():
@@ -180,7 +182,16 @@ func generar_seccion(indice: int) -> void:
 			nueva_mejora.position = posiciones_de_suelo[i]
 			nueva_mejora.add_to_group("chunk_" + str(indice))
 			contenedor_cubos.add_child(nueva_mejora)
-				
+			
+	posiciones_de_suelo.shuffle()
+	for i in range(cantidad_de_enemigos_por_seccion):
+		if i < posiciones_de_suelo.size():
+			var nuevo_enemigo = enemigo.instantiate()
+			nuevo_enemigo.position =posiciones_de_suelo[i]+Vector3(0,1,0)
+			contenedor_enemigos.add_child(nuevo_enemigo)
+			
+		
+		
 	# Plataforma de inicio seguro
 	if indice == 0:
 		var cubo_central = cubo_scene.instantiate()
