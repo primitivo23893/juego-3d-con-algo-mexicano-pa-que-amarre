@@ -11,14 +11,23 @@ config_version=5
 [application]
 
 config/name="juego 3d con algo mexicano pa que amarre"
-run/main_scene="uid://bhdo1iuslhblg"
+run/main_scene="uid://bt2ael5h8snu1"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://hrl1lhrtxubw"
+
+[autoload]
+
+GameManager="*uid://8o5t468qi1x1"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

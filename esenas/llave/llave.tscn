@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bael5qkhqodxa"]
+
+[ext_resource type="Script" uid="uid://rbt8xlksl5d4" path="res://esenas/llave/llave.gd" id="1_xh46b"]
+[ext_resource type="ArrayMesh" uid="uid://dat77gvux662y" path="res://Models/Key.obj" id="2_8t6cv"]
+[ext_resource type="Texture2D" uid="uid://cokqibv5mcm01" path="res://Models/Key.png" id="3_n7opc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n7opc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_riowr"]
+albedo_texture = ExtResource("3_n7opc")
+
+[node name="Llave" type="Area3D" unique_id=1835439552]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_xh46b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=984136384]
+shape = SubResource("CapsuleShape3D_n7opc")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1351977533]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.21661496, 0)
+light_color = Color(0, 0.91764706, 1, 1)
+light_energy = 3.0
+omni_range = 3.0
+
+[node name="Key" type="MeshInstance3D" parent="." unique_id=1236858700]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5128225, 0)
+mesh = ExtResource("2_8t6cv")
+surface_material_override/0 = SubResource("StandardMaterial3D_riowr")

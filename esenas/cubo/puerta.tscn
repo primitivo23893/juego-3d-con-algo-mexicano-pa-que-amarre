@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://7bul2wvyqveo"]
+
+[ext_resource type="ArrayMesh" uid="uid://c2sjk5i70kg4r" path="res://Models/Gate.obj" id="1_ba0qs"]
+[ext_resource type="Script" uid="uid://dy0ug2lgps88m" path="res://esenas/cubo/puerta.gd" id="1_svjwv"]
+[ext_resource type="Texture2D" uid="uid://bfnvpygw1s73d" path="res://Models/Gate.png" id="2_hm6hm"]
+[ext_resource type="AudioStream" uid="uid://cyk4y3on0gsel" path="res://assets/sounds/abrete_sesamo.ogg" id="2_svjwv"]
+[ext_resource type="ArrayMesh" uid="uid://bt2c8wji5wv5p" path="res://Models/GateOpen.obj" id="3_svjwv"]
+[ext_resource type="Texture2D" uid="uid://c62r7s6gxi0hn" path="res://Models/GateOpen.png" id="4_d6jbl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r5pc7"]
+albedo_texture = ExtResource("2_hm6hm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_okl8g"]
+albedo_texture = ExtResource("4_d6jbl")
+
+[node name="Puerta" type="StaticBody3D" unique_id=1832527277]
+script = ExtResource("1_svjwv")
+
+[node name="AbreteSesamo" type="AudioStreamPlayer" parent="." unique_id=1901674169]
+stream = ExtResource("2_svjwv")
+
+[node name="Gate" type="MeshInstance3D" parent="." unique_id=1082033654]
+transform = Transform3D(0.625, 0, 0, 0, 0.625, 0, 0, 0, 0.625, 0, -0.25, 0)
+mesh = ExtResource("1_ba0qs")
+surface_material_override/0 = SubResource("StandardMaterial3D_r5pc7")
+
+[node name="GateOpen" type="MeshInstance3D" parent="." unique_id=1349941846]
+transform = Transform3D(0.625, 0, 0, 0, 0.625, 0, 0, 0, 0.625, 0, -0.25, 0)
+mesh = ExtResource("3_svjwv")
+surface_material_override/0 = SubResource("StandardMaterial3D_okl8g")

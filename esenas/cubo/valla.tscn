@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ciy20cfo4la8f"]
+
+[ext_resource type="ArrayMesh" uid="uid://bdyekwh5bm3r6" path="res://Models/Fence.obj" id="1_ssm5x"]
+[ext_resource type="Texture2D" uid="uid://dsaii313vuo0w" path="res://Models/Fence.png" id="2_mhui2"]
+[ext_resource type="ArrayMesh" uid="uid://b0upnrj5gooqp" path="res://Models/FenceCorner.obj" id="3_r70q4"]
+[ext_resource type="Texture2D" uid="uid://moxwabu5fnua" path="res://Models/FenceCorner.png" id="4_0jlba"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r70q4"]
+albedo_texture = ExtResource("2_mhui2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j17tk"]
+albedo_texture = ExtResource("4_0jlba")
+
+[node name="Valla" type="Node3D" unique_id=868170580]
+
+[node name="Fence" type="MeshInstance3D" parent="." unique_id=1391965046]
+transform = Transform3D(0.625, 0, 0, 0, 0.625, 0, 0, 0, 0.625, 0, -0.25, 0)
+mesh = ExtResource("1_ssm5x")
+surface_material_override/0 = SubResource("StandardMaterial3D_r70q4")
+
+[node name="FenceCorner" type="MeshInstance3D" parent="." unique_id=563590797]
+transform = Transform3D(0.625, 0, 0, 0, 0.625, 0, 0, 0, 0.625, 0, -0.25, 0)
+mesh = ExtResource("3_r70q4")
+surface_material_override/0 = SubResource("StandardMaterial3D_j17tk")

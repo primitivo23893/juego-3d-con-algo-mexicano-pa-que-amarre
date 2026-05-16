@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://ck47iwk7i6ehd"]
+
+[ext_resource type="Script" uid="uid://d227oxm85pak5" path="res://esenas/menu_ajustes/menu_ajustes.gd" id="1_orgui"]
+[ext_resource type="FontFile" uid="uid://cdlfyehof1r61" path="res://assets/fonts/edwardianscriptitc.ttf" id="2_ocfrn"]
+
+[sub_resource type="GDScript" id="GDScript_40olx"]
+script/source = "extends HSlider
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="MenuAjustes" type="Control" unique_id=578225645]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -18.0
+offset_right = 1.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_orgui")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1420586525]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.69803923)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=204426419]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.0
+offset_top = -195.0
+offset_right = 174.0
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Ajustes" type="Label" parent="VBoxContainer" unique_id=1483224582]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ocfrn")
+theme_override_font_sizes/font_size = 120
+text = "Ajustes"
+horizontal_alignment = 1
+
+[node name="Musica" type="Label" parent="VBoxContainer" unique_id=1984227239]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ocfrn")
+theme_override_font_sizes/font_size = 64
+text = "Música"
+horizontal_alignment = 1
+
+[node name="SliderMusica" type="HSlider" parent="VBoxContainer" unique_id=2096095745]
+layout_mode = 2
+value = 100.0
+tick_count = 5
+
+[node name="Efectos" type="Label" parent="VBoxContainer" unique_id=91603026]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ocfrn")
+theme_override_font_sizes/font_size = 64
+text = "Efectos"
+horizontal_alignment = 1
+
+[node name="SliderEfectos" type="HSlider" parent="VBoxContainer" unique_id=1742396770]
+layout_mode = 2
+value = 100.0
+tick_count = 5
+script = SubResource("GDScript_40olx")
+
+[node name="Pantalla" type="Label" parent="VBoxContainer" unique_id=1419485541]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ocfrn")
+theme_override_font_sizes/font_size = 64
+text = "Pantalla Completa"
+horizontal_alignment = 1
+
+[node name="CheckPantalla" type="CheckButton" parent="VBoxContainer" unique_id=1826225653]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Regresar" type="Button" parent="VBoxContainer" unique_id=1834830451]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ocfrn")
+theme_override_font_sizes/font_size = 64
+text = "Regresar"

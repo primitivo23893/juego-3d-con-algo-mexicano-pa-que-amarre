@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://bqhiqsqym6f0l"]
 
 [ext_resource type="Script" uid="uid://dyfjiirk1qooy" path="res://esenas/enemigo/enemigo.gd" id="1_r3cva"]
+[ext_resource type="Texture2D" uid="uid://4oa5iolnaj6t" path="res://assets/sprites/mounstros/0.png" id="2_j3lp7"]
+[ext_resource type="Texture2D" uid="uid://ciectmv8ciowf" path="res://assets/sprites/mounstros/1.png" id="3_rlv8i"]
+[ext_resource type="Texture2D" uid="uid://ducqr8t24hj3p" path="res://assets/sprites/mounstros/2.png" id="4_51ocq"]
+[ext_resource type="Texture2D" uid="uid://bcbx6o0ab1gf4" path="res://assets/sprites/mounstros/3.png" id="5_h561b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_em0b1"]
 albedo_color = Color(1, 0, 0, 1)
@@ -10,12 +14,48 @@ material = SubResource("StandardMaterial3D_em0b1")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fe3ws"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_45hun"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_j3lp7")
+}],
+"loop": true,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_rlv8i")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_51ocq")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_h561b")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}]
+
 [node name="Enemigo" type="CharacterBody3D" unique_id=1368458681]
 collision_layer = 8
 collision_mask = 19
 script = ExtResource("1_r3cva")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=529856596]
+visible = false
 mesh = SubResource("CapsuleMesh_r3cva")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=333346116]
@@ -36,3 +76,9 @@ target_position = Vector3(0, -4, 0)
 [node name="RayCastFloorIzquierda" type="RayCast3D" parent="." unique_id=1460332767]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 target_position = Vector3(0, -4, 0)
+
+[node name="Sprite" type="AnimatedSprite3D" parent="." unique_id=282290734]
+transform = Transform3D(0.31, 0, 0, 0, 0.31, 0, 0, 0, 0.31, 0, 0, 0)
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_45hun")
+animation = &"3"

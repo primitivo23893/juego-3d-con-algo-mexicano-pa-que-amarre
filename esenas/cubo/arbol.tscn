@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dvyqrew0igq7"]
+
+[ext_resource type="ArrayMesh" uid="uid://cha8hmiabiyof" path="res://Models/Tree.obj" id="1_8chn4"]
+[ext_resource type="Texture2D" uid="uid://d2ijshkh8lny1" path="res://Models/Tree.png" id="2_o24bi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4tcd4"]
+albedo_texture = ExtResource("2_o24bi")
+
+[node name="Arbol" type="Node3D" unique_id=2091236818]
+
+[node name="Tree" type="MeshInstance3D" parent="." unique_id=1065657693]
+transform = Transform3D(0.625, 0, 0, 0, 0.625, 0, 0, 0, 0.625, 0, 0, 0)
+mesh = ExtResource("1_8chn4")
+surface_material_override/0 = SubResource("StandardMaterial3D_4tcd4")

@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://bhdo1iuslhblg"]
 
 [ext_resource type="Script" uid="uid://bosrb5tt47hx1" path="res://esenas/principal/principal.gd" id="1_10c38"]
-[ext_resource type="PackedScene" uid="uid://bkh0lrow7sgvc" path="res://esenas/personaje/character_body_3d.tscn" id="2_hmm78"]
 [ext_resource type="PackedScene" uid="uid://b5mcuq8g7b1sx" path="res://esenas/bala/bala.tscn" id="3_10c38"]
 [ext_resource type="PackedScene" uid="uid://dphbw0cb63wj" path="res://esenas/mejora/mejora.tscn" id="4_nud3q"]
+[ext_resource type="Texture2D" uid="uid://c6evk507w1shy" path="res://assets/iu/player_1.png" id="5_jhsqd"]
+[ext_resource type="AudioStream" uid="uid://btguorrh2b55o" path="res://assets/musica/1940s My Dungeon.mp3" id="5_kk0fv"]
+[ext_resource type="Texture2D" uid="uid://bfaf08wcrlyii" path="res://assets/iu/llave.png" id="6_bp6ds"]
+[ext_resource type="Texture2D" uid="uid://bqqny2xibmspn" path="res://assets/arma.png" id="7_wp5dr"]
+[ext_resource type="Texture2D" uid="uid://dlfq8ycxb2gvk" path="res://assets/iu/player_2.png" id="8_sv7vv"]
+[ext_resource type="PackedScene" uid="uid://bael5qkhqodxa" path="res://esenas/llave/llave.tscn" id="9_bp6ds"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hmm78"]
 sky_top_color = Color(0.9224348, 0.9267584, 0.9234689, 1)
@@ -18,12 +23,6 @@ sky = SubResource("Sky_10c38")
 ambient_light_source = 3
 reflected_light_source = 2
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hmm78"]
-albedo_color = Color(0, 1, 1, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10c38"]
-albedo_color = Color(0, 0, 1, 1)
-
 [node name="Principal" type="Node3D" unique_id=2119835509]
 script = ExtResource("1_10c38")
 
@@ -33,17 +32,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4667354, 2.9749753, 4.8692
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2090765468]
 environment = SubResource("Environment_hmm78")
 
-[node name="CharacterBody3D" parent="." unique_id=459927726 instance=ExtResource("2_hmm78")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-collision_layer = 2
-color_player = SubResource("StandardMaterial3D_hmm78")
-
-[node name="CharacterBody3D2" parent="." unique_id=1662641891 instance=ExtResource("2_hmm78")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, 0)
-collision_layer = 2
-player_id = 2
-color_player = SubResource("StandardMaterial3D_10c38")
-
 [node name="Mapa" type="Node3D" parent="." unique_id=1309599247]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1904789641]
@@ -52,6 +40,7 @@ projection = 1
 size = 5.5123496
 
 [node name="Timer" type="Timer" parent="." unique_id=900018383]
+wait_time = 30.0
 
 [node name="Enemigos" type="Node3D" parent="." unique_id=1973403736]
 
@@ -60,6 +49,102 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.035164833, 2.0083745, -1.3
 
 [node name="Node3D" parent="." unique_id=1402238466 instance=ExtResource("4_nud3q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03756976, 0, -1.990679)
+visible = false
 
 [node name="Node3D2" parent="." unique_id=1120673126 instance=ExtResource("4_nud3q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3723953, 0, -2.1275084)
+visible = false
+
+[node name="1940sMyDungeon" type="AudioStreamPlayer" parent="." unique_id=2061156514]
+process_mode = 3
+stream = ExtResource("5_kk0fv")
+volume_db = -7.791
+autoplay = true
+bus = &"Musica"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1332212611]
+
+[node name="MarginContainer" type="Control" parent="CanvasLayer" unique_id=1826863948]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 4456.6665
+offset_bottom = 2506.6665
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+
+[node name="UI_Jugador1" type="HBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=1194144081]
+layout_mode = 0
+offset_right = 958.0
+offset_bottom = 485.0
+
+[node name="IconP1" type="TextureRect" parent="CanvasLayer/MarginContainer/UI_Jugador1" unique_id=1857203008]
+layout_mode = 2
+texture = ExtResource("5_jhsqd")
+
+[node name="Llave" type="TextureRect" parent="CanvasLayer/MarginContainer/UI_Jugador1" unique_id=1098783866]
+layout_mode = 2
+texture = ExtResource("6_bp6ds")
+
+[node name="ArmaP1" type="TextureRect" parent="CanvasLayer/MarginContainer/UI_Jugador1" unique_id=1420307922]
+visible = false
+layout_mode = 2
+texture = ExtResource("7_wp5dr")
+
+[node name="LabelTiempoArmaP1" type="Label" parent="CanvasLayer/MarginContainer/UI_Jugador1" unique_id=1159020426]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 353
+text = "30"
+
+[node name="Control" type="Control" parent="CanvasLayer/MarginContainer" unique_id=576410347]
+anchors_preset = 0
+offset_right = 6396.6665
+offset_bottom = 476.66666
+
+[node name="LabelBajasGlobales" type="Label" parent="CanvasLayer/MarginContainer/Control" unique_id=1744024223]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -802.0
+offset_right = 802.0
+offset_bottom = 625.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 300
+text = "0"
+horizontal_alignment = 1
+
+[node name="UI_Jugador2" type="HBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=50869776]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -958.0
+offset_bottom = 485.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+
+[node name="LabelTiempoArmaP2" type="Label" parent="CanvasLayer/MarginContainer/UI_Jugador2" unique_id=688286838]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 353
+text = "30"
+
+[node name="ArmaP2" type="TextureRect" parent="CanvasLayer/MarginContainer/UI_Jugador2" unique_id=1144244746]
+visible = false
+layout_mode = 2
+texture = ExtResource("7_wp5dr")
+
+[node name="Llave" type="TextureRect" parent="CanvasLayer/MarginContainer/UI_Jugador2" unique_id=92871391]
+layout_mode = 2
+texture = ExtResource("6_bp6ds")
+
+[node name="IconP2" type="TextureRect" parent="CanvasLayer/MarginContainer/UI_Jugador2" unique_id=1502797132]
+layout_mode = 2
+texture = ExtResource("8_sv7vv")
+
+[node name="Llave" parent="." unique_id=1835439552 instance=ExtResource("9_bp6ds")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.897913, 0, -2.2685404)

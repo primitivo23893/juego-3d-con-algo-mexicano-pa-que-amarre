@@ -1,12 +1,7 @@
 [gd_scene format=3 uid="uid://b5mcuq8g7b1sx"]
 
 [ext_resource type="Script" uid="uid://du1dh620e8os2" path="res://esenas/bala/bala.gd" id="1_gqg63"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gqg63"]
-albedo_color = Color(0.23, 0.23, 0.23, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_x6ofx"]
-material = SubResource("StandardMaterial3D_gqg63")
+[ext_resource type="ArrayMesh" uid="uid://b18eejrwddmnd" path="res://Models/Bullet.obj" id="2_x6ofx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t14aw"]
 
@@ -16,10 +11,10 @@ collision_layer = 16
 collision_mask = 8
 script = ExtResource("1_gqg63")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=923115519]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
-mesh = SubResource("CapsuleMesh_x6ofx")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1356337760]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+transform = Transform3D(0.3, -8.881784e-16, 8.6736174e-19, 0, 0.3, -1.4551915e-11, 0, 1.4551915e-11, 0.3, 4.6758603e-15, -1.0697122e-07, -0.00016564128)
 shape = SubResource("CapsuleShape3D_t14aw")
+
+[node name="Bullet" type="MeshInstance3D" parent="." unique_id=1109748988]
+transform = Transform3D(-2.7322729e-08, -0.63421637, -3.2135556e-08, 1.4551915e-10, -2.7722482e-08, 0.7351758, -0.62507117, 2.772248e-08, 5.820766e-11, 0.5056095, 0.049061622, -0.002454889)
+mesh = ExtResource("2_x6ofx")

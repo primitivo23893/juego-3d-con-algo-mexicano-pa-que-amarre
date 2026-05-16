@@ -8,19 +8,14 @@ func _ready() -> void:
 	await get_tree().create_timer(2.0).timeout
 	queue_free()
 
-
 func configurar(direccion: Vector3) -> void:
 	direccion_viaje = direccion.normalized()
 
 func _physics_process(delta: float) -> void:
-	
 	global_position += direccion_viaje * velocidad * delta
-	
 
-
-
-func _on_body_entered(body: CharacterBody3D) -> void:
+func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("enemigos"): 
 		if body.has_method("recibir_dano"):
-			body.recibir_dano()
-		queue_free() 
+			body.recibir_dano() # Llama al daño directo del enemigo
+		queue_free()

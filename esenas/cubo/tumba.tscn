@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bvu8x6ri1e2yr"]
+
+[ext_resource type="ArrayMesh" uid="uid://cssupm2q8hglh" path="res://Models/Grave.obj" id="1_t3bnt"]
+[ext_resource type="Texture2D" uid="uid://biarn0ioj0q8m" path="res://Models/Grave.png" id="2_obaok"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r86mm"]
+albedo_texture = ExtResource("2_obaok")
+
+[node name="tumba" type="Node3D" unique_id=1108606265]
+
+[node name="Grave" type="MeshInstance3D" parent="." unique_id=976394570]
+transform = Transform3D(0.625, 0, 0, 0, 0.625, 0, 0, 0, 0.625, 0, -0.25, 0)
+mesh = ExtResource("1_t3bnt")
+surface_material_override/0 = SubResource("StandardMaterial3D_r86mm")
