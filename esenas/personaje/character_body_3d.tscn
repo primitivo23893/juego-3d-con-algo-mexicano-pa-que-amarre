@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bkh0lrow7sgvc"]
 
 [ext_resource type="Script" uid="uid://dlo3cvr4mkxas" path="res://esenas/personaje/character_body_3d.gd" id="1_5vruu"]
+[ext_resource type="Texture2D" uid="uid://bqqny2xibmspn" path="res://assets/arma.png" id="2_nsl7w"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5vruu"]
 albedo_color = Color(1, 1, 0, 1)
@@ -9,6 +10,12 @@ metallic = 0.6
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_nsl7w"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_arjcg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nsl7w"]
+albedo_texture = ExtResource("2_nsl7w")
+
+[sub_resource type="QuadMesh" id="QuadMesh_arjcg"]
+material = SubResource("StandardMaterial3D_nsl7w")
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=459927726]
 script = ExtResource("1_5vruu")
@@ -22,3 +29,7 @@ shape = SubResource("CapsuleShape3D_arjcg")
 
 [node name="RayCastFloor" type="RayCast3D" parent="." unique_id=931113085]
 target_position = Vector3(0, -4, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=139349761]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.7703144, 0.14816505, 0)
+mesh = SubResource("QuadMesh_arjcg")

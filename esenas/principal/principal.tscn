@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bosrb5tt47hx1" path="res://esenas/principal/principal.gd" id="1_10c38"]
 [ext_resource type="PackedScene" uid="uid://bkh0lrow7sgvc" path="res://esenas/personaje/character_body_3d.tscn" id="2_hmm78"]
+[ext_resource type="PackedScene" uid="uid://b5mcuq8g7b1sx" path="res://esenas/bala/bala.tscn" id="3_10c38"]
+[ext_resource type="PackedScene" uid="uid://dphbw0cb63wj" path="res://esenas/mejora/mejora.tscn" id="4_nud3q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hmm78"]
 sky_top_color = Color(0.9224348, 0.9267584, 0.9234689, 1)
@@ -52,3 +54,12 @@ size = 5.5123496
 [node name="Timer" type="Timer" parent="." unique_id=900018383]
 
 [node name="Enemigos" type="Node3D" parent="." unique_id=1973403736]
+
+[node name="Bala" parent="." unique_id=1738756876 instance=ExtResource("3_10c38")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.035164833, 2.0083745, -1.3452406)
+
+[node name="Node3D" parent="." unique_id=1402238466 instance=ExtResource("4_nud3q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03756976, 0, -1.990679)
+
+[node name="Node3D2" parent="." unique_id=1120673126 instance=ExtResource("4_nud3q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3723953, 0, -2.1275084)

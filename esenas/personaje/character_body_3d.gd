@@ -10,12 +10,23 @@ var is_moving = false
 @export var color_player : StandardMaterial3D 
 
 var direccion_actual := Vector2.ZERO
+var ultima_direccion_mirada := Vector2(0, 1) 
+var tiene_arma := false
+
+
+var bala_scene = preload("res://esenas/bala/bala.tscn")
+
 func _ready() -> void:
 	add_to_group("jugadores")
 	mesh.material_override = color_player
 	
-	
 func _physics_process(_delta: float) -> void:
+	
+	var action_shoot = "shoot_p" + str(player_id)
+	if Input.is_action_just_pressed(action_shoot) and tiene_arma:
+		disparar()
+
+
 	if is_moving:
 		return
 
@@ -30,7 +41,6 @@ func _physics_process(_delta: float) -> void:
 	if input_bruto == Vector2.ZERO:
 		direccion_actual = Vector2.ZERO
 		return
-
 
 	if Input.is_action_just_pressed(action_up): direccion_actual = Vector2(0, -1)
 	elif Input.is_action_just_pressed(action_down): direccion_actual = Vector2(0, 1)
@@ -52,6 +62,9 @@ func _physics_process(_delta: float) -> void:
 
 
 	if direccion_actual != Vector2.ZERO:
+
+		ultima_direccion_mirada = direccion_actual
+		
 		var direccion_3d = Vector3(direccion_actual.x, 0, direccion_actual.y)
 		var target_pos = global_position + (direccion_3d * GRID_SIZE)
 
@@ -69,3 +82,27 @@ func move_to(target_pos: Vector3):
 	tween.tween_property(self, "global_position", target_pos, 0.2)
 	await tween.finished
 	is_moving = false
+
+
+
+
+func recibir_mejora(tipo: int):
+	if tipo == 0: 
+		tiene_arma = true
+		print("¡Jugador ", player_id, " ahora tiene un arma!")
+		
+
+func disparar():
+	var nueva_bala = bala_scene.instantiate()
+	
+	get_tree().current_scene.add_child(nueva_bala)
+	
+	nueva_bala.global_position = self.global_position
+	
+	var dir_3d = Vector3(ultima_direccion_mirada.x, 0, ultima_direccion_mirada.y)
+	var rotacion_y = atan2(dir_3d.x, dir_3d.z)
+	nueva_bala.rotation.y = rotacion_y + 2 * PI / 4
+
+
+	if nueva_bala.has_method("configurar")	:
+		nueva_bala.configurar(dir_3d)

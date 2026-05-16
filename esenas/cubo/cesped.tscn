@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cp53msk664660"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_122ud"]
+albedo_color = Color(0.212, 0.4, 0.21513334, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_122ud"]
+material = SubResource("StandardMaterial3D_122ud")
+
+[node name="Cesped" type="Node3D" unique_id=967513967]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=193740740]
+transform = Transform3D(1, 0, 0, 0, 1.25, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_122ud")
