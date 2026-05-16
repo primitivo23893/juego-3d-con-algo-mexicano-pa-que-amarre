@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cp53msk664660"]
 
+[ext_resource type="ArrayMesh" uid="uid://5ukfw340xoxi" path="res://Models/Ground.obj" id="1_cxc41"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_122ud"]
 albedo_color = Color(0.212, 0.4, 0.21513334, 1)
 
@@ -10,4 +12,9 @@ material = SubResource("StandardMaterial3D_122ud")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=193740740]
 transform = Transform3D(1, 0, 0, 0, 1.25, 0, 0, 0, 1, 0, 0, 0)
+visible = false
 mesh = SubResource("BoxMesh_122ud")
+
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=1617651692]
+transform = Transform3D(0.625, 0, 0, 0, 0.625, 0, 0, 0, 0.625, 0, -0.625, 0)
+mesh = ExtResource("1_cxc41")
